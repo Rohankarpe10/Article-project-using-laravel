@@ -11,11 +11,31 @@ class MemberController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    
+    public function index(Request $request)
     {
-        $members = Member::all();
-        return view ('index')->with('members', $members);
+        $search =$request['search'] ??"";
+        if ($search != ""){
+            $members = Member::where('name','LIKE',"%$search%")->get();
+        }else{
+            $members = Member::all();
+        } 
+        return view ('index')->with('members', $members,'search', $search);
     }
+
+     public function filter(Request $request){
+
+        
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
+
+        $members = Member::whereDate('created_at','>=',$start_date)
+                            ->whereDate('created_at','<=',$end_date)
+                            ->get();
+
+        return view ('index')->with('members',$members);
+    } 
+    
 
     /**
      * Show the form for creating a new resource.

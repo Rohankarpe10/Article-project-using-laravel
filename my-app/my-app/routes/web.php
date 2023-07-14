@@ -32,3 +32,4 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::resource("/member", MemberController::class);
+Route::get('/filter', [MemberController::class, 'filter']);
