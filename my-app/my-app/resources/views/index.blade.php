@@ -32,7 +32,7 @@
     </nav>
  
     <div class="container">
-       <h1> Welcome</h1>
+       <h1> Welcome, {{ Auth::user()->name }}</h1>
     </div>
 
 @extends('layout')
@@ -44,13 +44,16 @@
         </div>
         <form action="">
             <div class="form-group">
-                <input type="search" name="search" id="" class="form-control" placeholder="Search by Article name or catagory" value="">
+                <input type="search" name="search" id="" class="form-control" placeholder="Search by catagory name" value="">
             </div>  
+            <br></br>
             <button class="btn btn-primary">Search</button>
-            <a href="{{url('/member')}}">
-            <button class="btn btn-primary" type="button">Reset</button>
-        
-</form>
+            <a href="{{url('/member')}}">   
+        </form>
+        <br></br>
+        <form action="">
+        <button class="btn btn-primary" type="button">Reset the category</button>
+        </form>
         <form method="GET" action="/filter">
         
             <div class="col-md-3">
@@ -66,19 +69,22 @@
             <div class="col-md-1 pt-4">
                 <button type = "submit" class="btn btn-primary">Filter</button>
             </div>
-
         </form>
+        <br></br>
         <div class="col-lg-2">
             <a href="{{ url('/member/create') }}" class="btn btn-success" title="Add New Article">
                 Add New Article
             </a>
         </div>
     </div>
+    <br></br>
     <table class="table table-bordered table-striped" id="membersTable">
         <thead>
             <tr>
                 <th>#</th>
                 <th>Articlename</th>
+                <th>Links</th>
+                <th>Category</th>
                 <th>Description</th>
                 <th>Photo</th> 
                 <th>Created_at</th>      
@@ -89,6 +95,8 @@
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->name }}</td>
+                    <td>{{ $item->Links }}</td>
+                    <td>{{ $item->category }}</td>
                     <td>{{ $item->description }}</td>
                     <td>
                         <img src="{{ asset($item->photo) }}" width= '60' height='60' class="img img-responsive" />

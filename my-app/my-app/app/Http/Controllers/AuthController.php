@@ -21,6 +21,8 @@ class AuthController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
+        $user->category = $request->category;
+
  
         $user->save();
  
@@ -40,7 +42,7 @@ class AuthController extends Controller
         ];
  
         if (Auth::attempt($credetials)) {
-            return redirect('/home')->with('success', 'Login Success');
+            return redirect('/member?search=Sports')->with('success', 'Login Success');
         }
  
         return back()->with('error', 'Error Email or Password');

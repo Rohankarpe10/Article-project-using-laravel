@@ -16,7 +16,7 @@ class MemberController extends Controller
     {
         $search =$request['search'] ??"";
         if ($search != ""){
-            $members = Member::where('name','LIKE',"%$search%")->get();
+            $members = Member::where('name','LIKE',"%$search%")->orWhere('category','LIKE',"%$search%")->get();
         }else{
             $members = Member::all();
         } 
