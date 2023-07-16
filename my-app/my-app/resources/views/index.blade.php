@@ -30,7 +30,7 @@
           </div>
         </div>
     </nav>
- 
+
     <div class="container">
        <h1> Welcome, {{ Auth::user()->name }}</h1>
     </div>
@@ -45,17 +45,16 @@
         <form action="">
             <div class="form-group">
                 <input type="search" name="search" id="" class="form-control" placeholder="Search by catagory name" value="">
-            </div>  
+            </div>
             <br></br>
             <button class="btn btn-primary">Search</button>
-            <a href="{{url('/member')}}">   
+            <a href="{{url('/member')}}">
         </form>
         <br></br>
         <form action="">
         <button class="btn btn-primary" type="button">Reset the category</button>
         </form>
         <form method="GET" action="/filter">
-        
             <div class="col-md-3">
                 <label> Start Date: </label>
                 <input type = "date" name="start_date" class="form-control">
@@ -86,22 +85,22 @@
                 <th>Links</th>
                 <th>Category</th>
                 <th>Description</th>
-                <th>Photo</th> 
-                <th>Created_at</th>      
-            </tr>    
+                <th>Photo</th>
+                <th>Created_at</th>
+            </tr>
         </thead>
         <tbody>
             @foreach($members as $item)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->name }}</td>
-                    <td>{{ $item->Links }}</td>
+                    <td>{{ $item->links }}</td>
                     <td>{{ $item->category }}</td>
                     <td>{{ $item->description }}</td>
                     <td>
                         <img src="{{ asset($item->photo) }}" width= '60' height='60' class="img img-responsive" />
                     </td>
-                    <td>{{$item->created_at->format('Y-m-d')}}</td> 
+                    <td>{{$item->created_at->format('Y-m-d')}}</td>
                 </tr>
             @endforeach
         </tbody>
