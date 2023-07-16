@@ -7,9 +7,6 @@
         {!! csrf_field() !!}
         <label>Name</label></br>
         <input type="text" name="name" id="name" class="form-control"></br>
-        <input type="text" name="links" id="links" class="form-control"></br>
-        <label>Category</label></br>
-        <input type="text" name="category" id="category" class="form-control"></br>
         <label>Description</label></br>
         <input type="text" name="description" id="description" class="form-control"></br>
         <input class="form-control" name="photo" type="file" id="photo"> </br>

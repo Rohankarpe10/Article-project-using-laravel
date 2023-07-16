@@ -34,17 +34,17 @@
                             <label for="password" class="form-label">Password</label>
                             <input type="password" name="password" class="form-control" id="password" required>
                         </div>
-                        <div class="mb-3">
+                        <!-- <div class="mb-3">
                             <label for="category" class="form-label">Category</label>
                             <select name='category' class="form-select">
-                               <!--  <option value='0'>--Select Category--</option>
+                               <option value='0'>--Select Category--</option>
                                 <option value='1'>Politics</option>
-                                <option value='2'>Sports</option> -->
+                                <option value='2'>Sports</option> 
                                 <option >--Select Category--</option>
                                 <option >Politics</option>
                                 <option >Sports</option>
                             </select>
-                        </div>
+                        </div> -->
                         <div class="mb-3">
                             <div class="d-grid">
                                 <button class="btn btn-primary">Register</button>

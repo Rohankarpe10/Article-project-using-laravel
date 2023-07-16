@@ -82,8 +82,6 @@
             <tr>
                 <th>#</th>
                 <th>Articlename</th>
-                <th>Links</th>
-                <th>Category</th>
                 <th>Description</th>
                 <th>Photo</th>
                 <th>Created_at</th>
@@ -94,8 +92,6 @@
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->name }}</td>
-                    <td>{{ $item->links }}</td>
-                    <td>{{ $item->category }}</td>
                     <td>{{ $item->description }}</td>
                     <td>
                         <img src="{{ asset($item->photo) }}" width= '60' height='60' class="img img-responsive" />
