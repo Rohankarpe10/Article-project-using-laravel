@@ -40,7 +40,7 @@ class AuthController extends Controller
         ];
 
         if (Auth::attempt($credetials)) {
-            return redirect('/member?search=Sports')->with('success', 'Login Success');
+            return redirect('/member')->with('success', 'Login Success');
         }
 
         return back()->with('error', 'Error Email or Password');
