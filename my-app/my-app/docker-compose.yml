@@ -21,6 +21,7 @@ services:
             DB_DATABASE: '${DB_DATABASE}'
             DB_USERNAME: '${DB_USERNAME}'
             DB_PASSWORD: '${DB_PASSWORD}'
+            DB_HOST: '${DB_HOST}'
         volumes:
             - '.:/var/www/html'
         networks:
