@@ -22,3 +22,11 @@ Run this command so that the tables are migrated
 
 
 
+About this project:
+1. In this project there is a registration page where the user can login.
+2. Then after successful registration then the user can login 
+3. Then on the home page the user can search for article and also filter the article 
+4. And also after login the user will have a personalized category where the user selected the category when registration 
+
+
+
